@@ -1,0 +1,88 @@
+<nav class="navbar navbar-expand-lg dark-brown-bg fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"
+      ><img src="assets/ns-logo-light.png" style="width: 60px; height: 60px"
+    /></a>
+
+    <button
+      class="navbar-toggler light-brown-text"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon light-brown-text"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a
+            class="nav-link active light-brown-text"
+            aria-current="page"
+            [routerLink]="['/home']"
+            fragment="introduction"
+            >BEMUTATKOZÁS</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link light-brown-text"
+            [routerLink]="['/home']"
+            fragment="catalog"
+            >Katalógus</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link light-brown-text"
+            [routerLink]="['/home']"
+            fragment="goldbarbuy"
+            >TÖRTARANYFELVÁSÁRLÁS</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link light-brown-text"
+            [routerLink]="['/home']"
+            fragment="contact"
+            >KAPCSOLAT</a
+          >
+        </li>
+      </ul>
+
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li *ngIf="!isLoggedIn" class="nav-item">
+          <a class="nav-link light-brown-text" [routerLink]="['/login']"
+            >Login</a
+          >
+        </li>
+
+        <li *ngIf="isLoggedIn" class="nav-item">
+          <button
+            class="btn light-brown-bg dropdown-toggle"
+            type="button"
+            id="dropdownMenuButton1"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            {{ username }}
+          </button>
+          <ul
+            class="dropdown-menu dropdown-menu-end"
+            aria-labelledby="dropdownMenuButton1"
+          >
+            <li><a class="dropdown-item" (click)="logout()">Log out</a></li>
+          </ul>
+        </li>
+
+        <li *ngIf="isLoggedIn" class="nav-item">
+          <a class="nav-link light-brown-text" [routerLink]="['/signup']"
+            >REGISZTRÁCIÓ</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

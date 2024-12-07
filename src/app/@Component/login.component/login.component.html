@@ -1,0 +1,41 @@
+<div class="container w-25">
+  <form
+    class="p-2 my-5 dark-brown-border rounded"
+    (submit)="onSubmitLogin(inputForm)"
+    #inputForm="ngForm"
+  >
+    <div class="username d-flex flex-column my-2">
+      <label>Felhasználónév</label>
+      <input
+        type="text"
+        name="username"
+        class="form-control"
+        placeholder="Felhasználónév"
+        ngModel
+        #username="ngModel"
+        required
+      />
+    </div>
+
+    <div class="password d-flex flex-column my-2">
+      <label>Jelszó</label>
+      <input
+        type="password"
+        name="password"
+        class="form-control"
+        placeholder="Jelszó"
+        ngModel
+        #password="ngModel"
+        required
+      />
+    </div>
+    <div class="submit-button-container d-flex justify-content-center my-2">
+      <button *ngIf="!isLoading" class="btn btn-secondary" type="submit">
+        Submit
+      </button>
+    </div>
+  </form>
+</div>
+<div class="w-100 d-flex justify-content-center">
+  <mat-spinner *ngIf="isLoading"></mat-spinner>
+</div>
