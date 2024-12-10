@@ -1,73 +1,12 @@
-<!-- <nav class="navbar navbar-expand-lg dark-brown-bg fixed-top">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#"
-      ><img src="assets/ns-logo-light.png" style="width: 60px; height: 60px"
-    /></a>
-
-    <button
-      class="navbar-toggler light-brown-text"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span class="navbar-toggler-icon light-brown-text"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a
-            class="nav-link active light-brown-text"
-            aria-current="page"
-            [routerLink]="['/home']"
-            fragment="introduction"
-            >BEMUTATKOZÁS</a
-          >
-        </li>
-        <li class="nav-item">
-          <a
-            class="nav-link light-brown-text"
-            [routerLink]="['/home']"
-            fragment="catalog"
-            >Katalógus
-          </a>
-        </li>
-        <li class="nav-item">
-          <a
-            class="nav-link light-brown-text"
-            [routerLink]="['/home']"
-            fragment="goldbarbuy"
-            >TÖRTARANYFELVÁSÁRLÁS
-          </a>
-        </li>
-        <li class="nav-item">
-          <a
-            class="nav-link light-brown-text"
-            [routerLink]="['/home']"
-            fragment="contact"
-            >KAPCSOLAT</a
-          >
-        </li>
-        <li class="nav-item">
-          <a class="nav-link light-brown-text" [routerLink]="['/login']"
-            >ADMIN</a
-          >
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav> -->
-<!-- <div class="pseudo-div" style="height: 100px"></div> -->
-
 <div class="container my-5">
   <!--Bemutatkozás-->
+
   <div
     #introduction
     id="introduction"
     class="introduction-container text-center pt-5"
   >
+    <div class="pseudo-div" style="height: 100px"></div>
     <h3 class="dark-brown-text">Bemutatkozás</h3>
     <span class="dark-brown-text"
       >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
@@ -80,10 +19,16 @@
       <img src="assets/csabi_allokep_minta.png" />
     </div>
   </div>
-  <hr class="dark-brown-text" />
+
+  <hr class="hr-text dark-brown-text" data-content="NS-ÉKSZER" />
 
   <!--Katalógus-->
-  <div #catalog id="catalog" class="introduction-container text-center my-5">
+  <div
+    #catalog
+    id="catalog"
+    class="catalog-container fragment-container text-center my-5"
+  >
+    <div class="pseudo-div" style="height: 100px"></div>
     <h3 class="dark-brown-text">KATALÓGUS</h3>
     <span class="dark-brown-text"
       >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
@@ -92,15 +37,19 @@
       commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
       velit esse cillum dolore eu fugiat nulla pariatur.</span
     >
+    <div class="my-3">
+      <button (click)="openCatalog()" class="btn btn-dark">Open catalog</button>
+    </div>
   </div>
-  <hr class="dark-brown-text" />
+  <hr class="hr-text dark-brown-text" data-content="NS-ÉKSZER" />
 
   <!--TÖRTARANYFELVÁSÁRLÁS-->
   <div
     #goldbarbuy
     id="goldbarbuy"
-    class="introduction-container text-center my-5"
+    class="goldbarbuy-container fragment-container text-center my-5"
   >
+    <div class="pseudo-div" style="height: 100px"></div>
     <h3 class="dark-brown-text">TÖRTARANYFELVÁSÁRLÁS</h3>
     <span class="dark-brown-text"
       >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
@@ -110,10 +59,109 @@
       velit esse cillum dolore eu fugiat nulla pariatur.</span
     >
   </div>
-  <hr class="dark-brown-text" />
+  <hr class="hr-text dark-brown-text" data-content="NS-ÉKSZER" />
+
+  <!--Időpont foglalás-->
+  <div
+    #scheduleAppointment
+    id="scheduleAppointment"
+    class="scheduleAppointment-container fragment-container text-center my-5"
+  >
+    <div class="pseudo-div" style="height: 100px"></div>
+    <h3 class="dark-brown-text">IDŐPONT FOGLALÁS</h3>
+    <span class="dark-brown-text"
+      >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+      velit esse cillum dolore eu fugiat nulla pariatur.</span
+    >
+    <div class="date-picker mx-auto mt-5">
+      <form
+        class="dark-brown-border rounded p-1"
+        (submit)="onAppointmentSelected(inputForm)"
+        #inputForm="ngForm"
+      >
+        <label class="dark-brown-text" for="inputDate"
+          >Válasszon időpontot:</label
+        >
+        <input
+          id="inputDate"
+          name="inputDate"
+          class="form-control"
+          [matDatepicker]="picker"
+          [matDatepickerFilter]="filterDates"
+          [min]="currentDate"
+          [(ngModel)]="selectedDate"
+          required
+          (dateChange)="fetchReservedHours($event)"
+        />
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+
+        <!-- Time Dropdown -->
+        <label class="dark-brown-text" for="startHour">óra</label>
+        <select
+          id="startHour"
+          name="startHour"
+          class="form-control"
+          [(ngModel)]="selectedTime"
+          required
+        >
+          <option *ngFor="let hour of availableHours" [value]="hour">
+            {{ hour }}
+          </option>
+        </select>
+
+        <!-- Name Input -->
+        <label class="dark-brown-text" for="name">Név:</label>
+        <input
+          id="name"
+          class="form-control"
+          name="name"
+          type="text"
+          [(ngModel)]="name"
+          required
+        />
+
+        <!-- Email Input -->
+        <label class="dark-brown-text" for="email">e-mail:</label>
+        <input
+          id="email"
+          class="form-control"
+          name="email"
+          type="email"
+          [(ngModel)]="email"
+          required
+        />
+
+        <div class="submit-button-container d-flex justify-content-center my-2">
+          <button class="btn btn-secondary" type="submit">Küldés</button>
+        </div>
+      </form>
+    </div>
+
+    <!--Időpontok (admin only)-->
+
+    <div *ngIf="role === 'admin'" class="appointments my-5">
+      <h5>Időpontok</h5>
+      <div *ngFor="let appointment of reservedAppointments">
+        <span>
+          {{ appointment.client.name }} / {{ appointment.client.email }} /
+          {{ appointment.date }}</span
+        >
+      </div>
+    </div>
+  </div>
+  <hr class="hr-text dark-brown-text" data-content="NS-ÉKSZER" />
 
   <!--Kapcsolat-->
-  <div #contact id="contact" class="introduction-container text-center my-5">
+  <div
+    #contact
+    id="contact"
+    class="contact-container fragment-container text-center my-5"
+  >
+    <div class="pseudo-div" style="height: 100px"></div>
     <h3 class="dark-brown-text">KAPCSOLAT</h3>
     <span class="dark-brown-text"
       >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
@@ -122,5 +170,38 @@
       commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
       velit esse cillum dolore eu fugiat nulla pariatur.</span
     >
+    <div class="my-3">
+      <a
+        class="mx-1 social-media-icon"
+        href="https://www.facebook.com/profile.php?id=100070797541712"
+        target="_blank"
+      >
+        <img src="assets/facebook-logo.svg" />
+      </a>
+
+      <a
+        class="mx-1 social-media-icon"
+        href="https://www.instagram.com/"
+        target="_blank"
+      >
+        <img src="assets/instagram-icon.svg" />
+      </a>
+
+      <a
+        class="mx-1 social-media-icon"
+        href="https://www.tiktok.com/"
+        target="_blank"
+      >
+        <img src="assets/tiktok-logo-colored.svg" />
+      </a>
+
+      <a
+        class="mx-1 social-media-icon"
+        href="https://www.linkedin.com/"
+        target="_blank"
+      >
+        <img src="assets/linkedin-icon.svg" />
+      </a>
+    </div>
   </div>
 </div>

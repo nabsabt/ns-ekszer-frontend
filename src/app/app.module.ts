@@ -22,6 +22,10 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { SignupComponent } from './@Component/signup.component/signup.component';
 import { NavbarComponent } from './@Component/navbar/navbar.component';
 import { AuthInterceptor } from './@Service/auth.interceptor';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { NSService } from './@Service/nsSrvice';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -39,10 +43,14 @@ import { AuthInterceptor } from './@Service/auth.interceptor';
     BrowserAnimationsModule,
     MatSnackBarModule,
     MatProgressSpinnerModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatFormFieldModule,
   ],
   providers: [
     AuthService,
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+    NSService,
   ],
   bootstrap: [AppComponent],
 })
