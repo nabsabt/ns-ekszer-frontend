@@ -1,11 +1,14 @@
 @media (max-width: 768px) {
 
 
-  img{
-    max-width: 80%;
-  }
+   .intoduction-profile-img{
+    width: 150px;
+   }
 }
 
+p{
+  text-align: justify;
+}
 .social-media-icon{
   transition: 400ms;
   opacity: 0.8;
@@ -15,10 +18,6 @@
   transition: 400ms;
 
   opacity: 1;
-}
-
-.fragment-container{
-  height: 750px
 }
 
 
@@ -59,3 +58,9 @@
     background-color: #e0d4c4;
   }
 }
+
+.appointment-table-container{
+  max-height: 400px;
+  overflow-y: auto;
+}
+

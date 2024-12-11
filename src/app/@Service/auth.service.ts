@@ -7,7 +7,7 @@ import {
   tokenPayload,
   User,
 } from '../@Interface/user.interface';
-import { Observable, Subject } from 'rxjs';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { environment } from '../../environments/environment';
 
 @Injectable()

@@ -1,0 +1,36 @@
+.hidden-login-controller{
+  width: 50px;
+  height: 50px
+}
+
+
+.admin-button:hover{
+  border-color: #e0d4c4;
+  color: #e0d4c4
+}
+
+.nav-link{
+  position: relative;
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  color: #e0d4c4;
+}
+
+.nav-link::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 80%;
+  height: 1px;
+  bottom: 15%;
+  left: 10%;
+  background-color: #e0d4c4;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.nav-link:hover::before {
+  transform: scaleX(1);
+}

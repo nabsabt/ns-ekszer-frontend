@@ -1,9 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
-import { AuthService } from '../../@Service/auth.service';
 import { Subscription } from 'rxjs';
-import { tokenPayload } from '../../@Interface/user.interface';
 import { NSService } from '../../@Service/nsSrvice';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Appointment } from '../../@Interface/appointment.interface';
@@ -36,20 +34,12 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private authService: AuthService,
     private nsService: NSService,
     private snackBar: MatSnackBar
   ) {}
 
   ngOnInit() {
-    this.userDataListenerSub = this.authService
-      .getUserInfoListener()
-      .subscribe({
-        next: (res: tokenPayload | null) => {
-          this.isLoggedIn = res ? true : false;
-          this.role = res ? res.role : '';
-        },
-      });
+    this.isLoggedIn = localStorage.getItem('role') === 'admin' ? true : false;
 
     this.activatedRoute.fragment.subscribe((fragment: string | null) => {
       if (fragment) this.jumpToSection(fragment);

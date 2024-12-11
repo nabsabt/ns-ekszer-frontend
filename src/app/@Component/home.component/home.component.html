@@ -1,22 +1,32 @@
-<div class="container my-5">
+<div class="container d-flex flex-column my-5">
   <!--Bemutatkozás-->
 
   <div
     #introduction
     id="introduction"
-    class="introduction-container text-center pt-5"
+    class="introduction-container d-flex text-center align-items-center pt-5"
   >
     <div class="pseudo-div" style="height: 100px"></div>
-    <h3 class="dark-brown-text">Bemutatkozás</h3>
-    <span class="dark-brown-text"
-      >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla .</span
-    >
+    <div class="p-2">
+      <div class="fragment-title d-flex align-items-center">
+        <mat-icon class="mb-2 mx-2 dark-brown-text">face</mat-icon>
+        <h3 class="dark-brown-text">BEMUTATKOZÁS</h3>
+      </div>
+
+      <p class="dark-brown-text">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+        velit esse cillum dolore eu fugiat nulla .
+      </p>
+    </div>
+
     <div>
-      <img src="assets/csabi_allokep_minta.png" />
+      <img
+        class="intoduction-profile-img"
+        src="assets/csabi_allokep_minta.png"
+      />
     </div>
   </div>
 
@@ -29,14 +39,18 @@
     class="catalog-container fragment-container text-center my-5"
   >
     <div class="pseudo-div" style="height: 100px"></div>
-    <h3 class="dark-brown-text">KATALÓGUS</h3>
-    <span class="dark-brown-text"
-      >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+    <div class="fragment-title d-flex align-items-center">
+      <mat-icon class="mb-2 mx-2 dark-brown-text">library_books</mat-icon>
+      <h3 class="dark-brown-text">KATALÓGUS</h3>
+    </div>
+
+    <p class="dark-brown-text">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
       tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
       veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
       commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur.</span
-    >
+      velit esse cillum dolore eu fugiat nulla pariatur.
+    </p>
     <div class="my-3">
       <button (click)="openCatalog()" class="btn btn-dark">Open catalog</button>
     </div>
@@ -50,14 +64,18 @@
     class="goldbarbuy-container fragment-container text-center my-5"
   >
     <div class="pseudo-div" style="height: 100px"></div>
-    <h3 class="dark-brown-text">TÖRTARANYFELVÁSÁRLÁS</h3>
-    <span class="dark-brown-text"
-      >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+    <div class="fragment-title d-flex align-items-center">
+      <mat-icon class="mb-2 mx-2 dark-brown-text">monetization_on</mat-icon>
+      <h3 class="dark-brown-text">TÖRTARANYFELVÁSÁRLÁS</h3>
+    </div>
+
+    <p class="dark-brown-text">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
       tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
       veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
       commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur.</span
-    >
+      velit esse cillum dolore eu fugiat nulla pariatur.
+    </p>
   </div>
   <hr class="hr-text dark-brown-text" data-content="NS-ÉKSZER" />
 
@@ -68,14 +86,18 @@
     class="scheduleAppointment-container fragment-container text-center my-5"
   >
     <div class="pseudo-div" style="height: 100px"></div>
-    <h3 class="dark-brown-text">IDŐPONT FOGLALÁS</h3>
-    <span class="dark-brown-text"
-      >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+    <div class="fragment-title d-flex align-items-center">
+      <mat-icon class="mb-2 mx-2 dark-brown-text">calendar_today</mat-icon>
+      <h3 class="dark-brown-text">IDŐPONT FOGLALÁS</h3>
+    </div>
+
+    <p class="dark-brown-text">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
       tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
       veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
       commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur.</span
-    >
+      velit esse cillum dolore eu fugiat nulla pariatur.
+    </p>
     <div class="date-picker mx-auto mt-5">
       <form
         class="dark-brown-border rounded p-1"
@@ -85,19 +107,30 @@
         <label class="dark-brown-text" for="inputDate"
           >Válasszon időpontot:</label
         >
-        <input
-          id="inputDate"
-          name="inputDate"
-          class="form-control"
-          [matDatepicker]="picker"
-          [matDatepickerFilter]="filterDates"
-          [min]="currentDate"
-          [(ngModel)]="selectedDate"
-          required
-          (dateChange)="fetchReservedHours($event)"
-        />
-        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker #picker></mat-datepicker>
+        <div class="d-flex justify-content-center">
+          <input
+            id="inputDate"
+            name="inputDate"
+            style="visibility: hidden; width: 0"
+            class="form-control p-0"
+            [matDatepicker]="picker"
+            [matDatepickerFilter]="filterDates"
+            [min]="currentDate"
+            [(ngModel)]="selectedDate"
+            required
+            (dateChange)="fetchReservedHours($event)"
+          />
+          <p class="my-auto pt-1 dark-brown-text">
+            {{ selectedDate | date : "YYYY-MM-dd" }}
+          </p>
+
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="picker"
+          ></mat-datepicker-toggle>
+
+          <mat-datepicker #picker></mat-datepicker>
+        </div>
 
         <!-- Time Dropdown -->
         <label class="dark-brown-text" for="startHour">óra</label>
@@ -143,13 +176,26 @@
 
     <!--Időpontok (admin only)-->
 
-    <div *ngIf="role === 'admin'" class="appointments my-5">
+    <div *ngIf="isLoggedIn" class="appointments my-5">
       <h5>Időpontok</h5>
-      <div *ngFor="let appointment of reservedAppointments">
-        <span>
-          {{ appointment.client.name }} / {{ appointment.client.email }} /
-          {{ appointment.date }}</span
-        >
+
+      <div class="appointment-table-container">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Név</th>
+              <th scope="col">E-mail</th>
+              <th scope="col">Időpont</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let appointment of reservedAppointments">
+              <td>{{ appointment.client.name }}</td>
+              <td>{{ appointment.client.email }}</td>
+              <td>{{ appointment.date | date : "YYYY-MM-dd HH:mm" }}</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
@@ -162,14 +208,18 @@
     class="contact-container fragment-container text-center my-5"
   >
     <div class="pseudo-div" style="height: 100px"></div>
-    <h3 class="dark-brown-text">KAPCSOLAT</h3>
-    <span class="dark-brown-text"
-      >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+    <div class="fragment-title d-flex align-items-center">
+      <mat-icon class="mb-2 mx-2 dark-brown-text">contact_phone</mat-icon>
+      <h3 class="dark-brown-text">KAPCSOLAT</h3>
+    </div>
+
+    <p class="dark-brown-text">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
       tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
       veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
       commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur.</span
-    >
+      velit esse cillum dolore eu fugiat nulla pariatur.
+    </p>
     <div class="my-3">
       <a
         class="mx-1 social-media-icon"
