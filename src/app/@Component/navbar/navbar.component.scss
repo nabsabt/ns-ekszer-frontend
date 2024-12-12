@@ -1,3 +1,4 @@
+
 .hidden-login-controller{
   width: 50px;
   height: 50px
@@ -9,12 +10,12 @@
   color: #e0d4c4
 }
 
-.nav-link{
+  .nav-link{
   position: relative;
   text-decoration: none;
 }
 
-.nav-link:hover {
+ .nav-link:hover {
   color: #e0d4c4;
 }
 
@@ -34,3 +35,4 @@
 .nav-link:hover::before {
   transform: scaleX(1);
 }
+

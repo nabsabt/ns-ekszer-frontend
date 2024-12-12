@@ -39,6 +39,7 @@ $custom-colors: (
 
 
 .mat-mdc-snack-bar-container {
+  width: 80%;
   &.danger-snackbar {
     --mdc-snackbar-container-color: #ff1303;
     --mdc-snackbar-supporting-text-color: #272725;
@@ -59,3 +60,4 @@ $custom-colors: (
   stroke: red;
 
 }
+

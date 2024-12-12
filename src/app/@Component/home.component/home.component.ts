@@ -90,8 +90,12 @@ export class HomeComponent implements OnInit, OnDestroy {
   // Restrict date picker to Wednesdays only
   public filterDates = (date: Date | null): boolean => {
     if (!date) return false;
-    // Allow only Wednesdays
-    return date.getDay() === 3;
+
+    const today = new Date();
+    today.setHours(0, 0, 0, 0); // Remove time component for accurate comparison
+
+    // Disable today and allow only Wednesdays
+    return date.getDay() === 3 && date.getTime() !== today.getTime();
   };
 
   // Format a date to YYYY-MM-DD
