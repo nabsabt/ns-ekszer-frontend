@@ -8,8 +8,8 @@ import { Appointment } from '../@Interface/appointment.interface';
 export class NSService {
   constructor(private http: HttpClient) {}
 
-  public getAppointments(): Observable<Array<string>> {
-    return this.http.get<Array<string>>(
+  public getAppointments(): Observable<Array<Appointment>> {
+    return this.http.get<Array<Appointment>>(
       `${environment.apiURL}/nsekszer/getAppointments`
     );
   }
@@ -22,6 +22,12 @@ export class NSService {
       {
         appointment,
       }
+    );
+  }
+
+  public deleteAppointment(_id: string): Observable<{ status: string }> {
+    return this.http.get<{ status: string }>(
+      `${environment.apiURL}/nsekszer/deleteAppointment/${_id}`
     );
   }
 }

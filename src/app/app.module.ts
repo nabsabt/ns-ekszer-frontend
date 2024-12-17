@@ -25,8 +25,11 @@ import { AuthInterceptor } from './@Service/auth.interceptor';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { NSService } from './@Service/nsSrvice';
 import { MatNativeDateModule } from '@angular/material/core';
-import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatSelectModule } from '@angular/material/select';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -48,6 +51,9 @@ import { MatIconModule } from '@angular/material/icon';
     MatNativeDateModule,
     MatFormFieldModule,
     MatIconModule,
+    MatExpansionModule,
+    MatSelectModule,
+    MatInputModule,
   ],
   providers: [
     AuthService,

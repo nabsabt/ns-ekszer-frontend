@@ -130,40 +130,52 @@
         </div>
 
         <!-- Time Dropdown -->
-        <label class="dark-brown-text" for="startHour">óra</label>
-        <select
-          id="startHour"
-          name="startHour"
-          class="form-control"
-          [(ngModel)]="selectedTime"
-          required
-        >
-          <option *ngFor="let hour of availableHours" [value]="hour">
-            {{ hour }}
-          </option>
-        </select>
+        <div class="d-flex flex-column my-2">
+          <mat-form-field>
+            <mat-label>Óra</mat-label>
+            <mat-select
+              id="startHour"
+              name="startHour"
+              [disabled]="!selectedDate"
+              [(ngModel)]="selectedTime"
+              required
+            >
+              <mat-option *ngFor="let hour of availableHours" [value]="hour">{{
+                hour
+              }}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
 
         <!-- Name Input -->
-        <label class="dark-brown-text" for="name">Név:</label>
-        <input
-          id="name"
-          class="form-control"
-          name="name"
-          type="text"
-          [(ngModel)]="name"
-          required
-        />
+        <div class="d-flex flex-column my-2">
+          <mat-form-field>
+            <mat-label>Név</mat-label>
+            <input
+              matInput
+              id="name"
+              name="name"
+              type="text"
+              [(ngModel)]="name"
+              required
+            />
+          </mat-form-field>
+        </div>
 
         <!-- Email Input -->
-        <label class="dark-brown-text" for="email">e-mail:</label>
-        <input
-          id="email"
-          class="form-control"
-          name="email"
-          type="email"
-          [(ngModel)]="email"
-          required
-        />
+        <div class="d-flex flex-column my-2">
+          <mat-form-field>
+            <mat-label>E-mail</mat-label>
+            <input
+              matInput
+              id="email"
+              name="email"
+              type="email"
+              [(ngModel)]="email"
+              required
+            />
+          </mat-form-field>
+        </div>
 
         <div class="submit-button-container d-flex justify-content-center my-2">
           <button class="btn btn-secondary" type="submit">Küldés</button>
@@ -177,19 +189,30 @@
       <h5>Időpontok</h5>
 
       <div class="appointment-table-container">
-        <table class="table">
-          <thead>
+        <table class="table table-secondary table-striped border rounded">
+          <thead style="position: sticky; top: 0">
             <tr>
               <th scope="col">Név</th>
-              <th scope="col">E-mail</th>
               <th scope="col">Időpont</th>
+              <th>Delete</th>
             </tr>
           </thead>
           <tbody>
             <tr *ngFor="let appointment of reservedAppointments">
               <td>{{ appointment.client.name }}</td>
-              <td>{{ appointment.client.email }}</td>
               <td>{{ appointment.date | date : "YYYY-MM-dd HH:mm" }}</td>
+              <td>
+                <!-- Button trigger delete confirm modal -->
+                <button
+                  type="button"
+                  class="btn btn-danger"
+                  data-bs-toggle="modal"
+                  data-bs-target="#deleteConfirmModal"
+                  (click)="onHighlightAppointmentForDelete(appointment)"
+                >
+                  <mat-icon class="mt-1">cancel</mat-icon>
+                </button>
+              </td>
             </tr>
           </tbody>
         </table>
@@ -197,6 +220,58 @@
     </div>
   </div>
   <hr class="hr-text dark-brown-text" data-content="NS-ÉKSZER" />
+
+  <!-- Delete confirm Modal -->
+  <div
+    class="modal fade"
+    id="deleteConfirmModal"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabel"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">
+            Biztosan törlöd a foglalást?
+          </h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div *ngIf="appointmentToBeDeleted" class="modal-body">
+          <span>Név: {{ appointmentToBeDeleted.client.name }}</span>
+          <br />
+          <span>E-mail: {{ appointmentToBeDeleted.client.email }}</span>
+          <br />
+          <span
+            >Időpont:
+            {{ appointmentToBeDeleted.date | date : "YYYY-MM-dd HH:mm" }}</span
+          >
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-bs-dismiss="modal"
+            (click)="onDeleteConfirm(false)"
+          >
+            Mégsem
+          </button>
+          <button
+            (click)="onDeleteConfirm(true)"
+            type="button"
+            class="btn btn-primary"
+            data-bs-dismiss="modal"
+          >
+            Törlés
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!--Kapcsolat-->
   <div

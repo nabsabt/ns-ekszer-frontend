@@ -6,6 +6,7 @@ import { NSService } from '../../@Service/nsSrvice';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Appointment } from '../../@Interface/appointment.interface';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'home-component',
@@ -16,6 +17,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   private userDataListenerSub: Subscription;
   private getAppointmentsSub: Subscription;
   private postNewAppointmentSub: Subscription;
+  private deleteAppointmentSub: Subscription;
 
   public isLoggedIn: boolean;
   public role: string = localStorage.getItem('role') || '';
@@ -24,13 +26,12 @@ export class HomeComponent implements OnInit, OnDestroy {
   public selectedDate: Date | null = null;
   public selectedTime: string | null = null;
   public currentDate: Date = new Date();
-  name = '';
-  email = '';
+  public name = '';
+  public email = '';
   public availableHours: string[] = [];
-  public reservedAppointments: {
-    date: string;
-    client: { name: string; email: string };
-  }[] = [];
+  public reservedAppointments: Array<Appointment>;
+
+  public appointmentToBeDeleted: Appointment;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -51,8 +52,9 @@ export class HomeComponent implements OnInit, OnDestroy {
   // Fetch all reserved appointments from the backend
   private fetchReservedAppointments(): void {
     this.getAppointmentsSub = this.nsService.getAppointments().subscribe({
-      next: (res: Array<any>) => {
+      next: (res: Array<Appointment>) => {
         this.reservedAppointments = res.map((appointment) => ({
+          _id: appointment._id,
           date: new Date(appointment.date).toISOString(), // Convert MongoDB date to ISO string
           client: {
             name: appointment.client.name,
@@ -60,11 +62,19 @@ export class HomeComponent implements OnInit, OnDestroy {
           },
         }));
       },
+      error: (error: HttpErrorResponse): HttpErrorResponse => {
+        this.snackBar.open(error.error.message, '', {
+          duration: 3000,
+          verticalPosition: 'bottom',
+          panelClass: ['danger-snackbar'],
+        });
+        return error;
+      },
     });
   }
 
   // Fetch reserved hours for the selected date
-  fetchReservedHours(event: any): void {
+  public fetchReservedHours(event: any): void {
     const selectedDate = event.value; // Extract the selected date
     if (!selectedDate) return;
 
@@ -164,9 +174,41 @@ export class HomeComponent implements OnInit, OnDestroy {
       });
   }
 
+  public onHighlightAppointmentForDelete(_appointmentToBeDeleted: Appointment) {
+    this.appointmentToBeDeleted = _appointmentToBeDeleted;
+  }
+
+  public onDeleteConfirm(isConfirmed: boolean) {
+    if (!isConfirmed) {
+      return;
+    } else {
+      if (this.appointmentToBeDeleted._id) {
+        this.deleteAppointmentSub = this.nsService
+          .deleteAppointment(this.appointmentToBeDeleted._id)
+          .subscribe({
+            next: (res: { status: string }) => {
+              this.snackBar.open(res.status, '', {
+                duration: 3000,
+                verticalPosition: 'bottom',
+                panelClass: ['success-snackbar'],
+              });
+              this.fetchReservedAppointments();
+            },
+            error: (error: HttpErrorResponse): HttpErrorResponse => {
+              this.snackBar.open(error.error.message, '', {
+                duration: 3000,
+                verticalPosition: 'bottom',
+                panelClass: ['danger-snackbar'],
+              });
+              return error;
+            },
+          });
+      }
+    }
+  }
+
   public openCatalog() {
-    const pdfUrl =
-      'https://drive.google.com/file/d/1ARS7B5CRK5sL867nfrsadrUhFYom_DxC/view?usp=drive_link';
+    const pdfUrl = environment.catalogPath + new Date().getTime();
     window.open(pdfUrl, '_blank');
   }
 
@@ -177,6 +219,9 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.getAppointmentsSub.unsubscribe();
     if (this.postNewAppointmentSub) {
       this.postNewAppointmentSub.unsubscribe();
+    }
+    if (this.deleteAppointmentSub) {
+      this.deleteAppointmentSub.unsubscribe();
     }
   }
 }

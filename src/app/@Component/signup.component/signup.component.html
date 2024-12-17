@@ -6,7 +6,7 @@
     #inputForm="ngForm"
   >
     <div class="username d-flex flex-column my-2">
-      <label>Felhasználónév</label>
+      <!-- <label>Felhasználónév</label>
       <input
         type="text"
         name="username"
@@ -15,11 +15,23 @@
         ngModel
         #username="ngModel"
         required
-      />
+      /> -->
+
+      <mat-form-field>
+        <mat-label>Felhasználónév</mat-label>
+        <input
+          matInput
+          id="email"
+          name="username"
+          type="text"
+          ngModel
+          required
+        />
+      </mat-form-field>
     </div>
 
     <div class="password d-flex flex-column my-2">
-      <label>Jelszó</label>
+      <!--  <label>Jelszó</label>
       <input
         type="password"
         name="password"
@@ -28,11 +40,23 @@
         ngModel
         #password="ngModel"
         required
-      />
+      /> -->
+
+      <mat-form-field>
+        <mat-label>Jelszó</mat-label>
+        <input
+          matInput
+          id="password"
+          name="password"
+          type="password"
+          ngModel
+          required
+        />
+      </mat-form-field>
     </div>
 
     <div class="passwordConfirm d-flex flex-column my-2">
-      <label>Jelszó</label>
+      <!-- <label>Jelszó</label>
       <input
         type="password"
         name="passwordConfirm"
@@ -41,7 +65,19 @@
         ngModel
         #passwordConfirm="ngModel"
         required
-      />
+      /> -->
+
+      <mat-form-field>
+        <mat-label>Jelszó</mat-label>
+        <input
+          matInput
+          id="passwordConfirm"
+          name="passwordConfirm"
+          type="password"
+          ngModel
+          required
+        />
+      </mat-form-field>
     </div>
     <div class="submit-button-container d-flex justify-content-center my-2">
       <button *ngIf="!isLoading" class="btn btn-secondary" type="submit">
