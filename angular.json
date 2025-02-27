@@ -39,7 +39,6 @@
           },
           "configurations": {
             "production": {
-              "outputPath":"dist/ns-ekszer-frontend/prod",
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
