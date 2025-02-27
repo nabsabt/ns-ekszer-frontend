@@ -1,12 +1,4 @@
-<nav
-  class="navbar navbar-expand-lg dark-brown-bg fixed-top"
-  (mousedown)="startLoginNavigationPress()"
-  (mouseup)="endLoginNavigationPress()"
-  (mouseleave)="endLoginNavigationPress()"
-  (touchstart)="startLoginNavigationPress()"
-  (touchend)="endLoginNavigationPress()"
-  (touchcancel)="endLoginNavigationPress()"
->
+<nav class="navbar navbar-expand-lg dark-brown-bg fixed-top">
   <div class="container-fluid">
     <a class="navbar-brand" href="#"
       ><img src="assets/ns-logo-light.png" style="width: 60px; height: 60px"
@@ -61,53 +53,9 @@
           <a
             class="nav-link light-brown-text"
             [routerLink]="['/home']"
-            fragment="scheduleAppointment"
-            (click)="collapseNavbar()"
-            >IDŐPONT FOGLALÁS</a
-          >
-        </li>
-        <li class="nav-item">
-          <a
-            class="nav-link light-brown-text"
-            [routerLink]="['/home']"
             fragment="contact"
             (click)="collapseNavbar()"
             >KAPCSOLAT</a
-          >
-        </li>
-      </ul>
-
-      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-        <li *ngIf="isLoggedIn" class="nav-item">
-          <div class="dropdown">
-            <button
-              class="btn light-brown-bg dropdown-toggle admin-button"
-              type="button"
-              id="dropdownMenuButton1"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              {{ username }}
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-              <li>
-                <a
-                  class="dropdown-item"
-                  style="cursor: pointer"
-                  (click)="logout()"
-                  >Log out</a
-                >
-              </li>
-            </ul>
-          </div>
-        </li>
-
-        <li *ngIf="isLoggedIn" class="nav-item">
-          <a
-            (click)="collapseNavbar()"
-            class="nav-link light-brown-text"
-            [routerLink]="['/signup']"
-            >REGISZTRÁCIÓ</a
           >
         </li>
       </ul>

@@ -11,7 +11,7 @@ const routes: Routes = [
     path: 'home',
     component: HomeComponent,
   },
-  {
+  /*   {
     path: 'login',
     component: LoginComponent,
   },
@@ -19,7 +19,7 @@ const routes: Routes = [
     path: 'signup',
     component: SignupComponent,
     canActivate: [AuthGuard],
-  },
+  }, */
   {
     path: '**',
     component: HomeComponent,

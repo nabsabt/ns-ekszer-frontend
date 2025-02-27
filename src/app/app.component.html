@@ -1,3 +1,40 @@
+@if(!isUnderDevelopment){
 <navbar-component></navbar-component>
-<!-- <div class="pseudo-div" style="height: 100px"></div> -->
 <router-outlet></router-outlet>
+} @if(isUnderDevelopment){
+<div class="business-card mt-1">
+  <h5>Weboldalunk jelenleg fejlesztés alatt áll!</h5>
+  <div class="logo"><span>ÉKSZER</span></div>
+  <div class="contact">
+    <h2>Nagy Sándor</h2>
+    <p>tulajdonos - aranyműves</p>
+    <p>nagy.sandor&#64;nsekszer.hu</p>
+    <p>+36 20 950 9053</p>
+  </div>
+  <div class="contact">
+    <h2>dr. Szabó Csaba József</h2>
+    <p>üzletvezető</p>
+    <p>szabo.csaba&#64;nsekszer.hu</p>
+    <p>+36 70 374 3807</p>
+  </div>
+  <div class="hours">
+    <h3>Nyitvatartás</h3>
+    <p>kedd 14:00-18:00</p>
+    <p>szerda 10:00-18:00</p>
+    <p>csütörtök 14:00-18:00</p>
+    <p>péntek 10:00-15:00</p>
+  </div>
+  <div class="website">
+    <a href="https://www.nsekszer.hu" target="_blank">www.nsekszer.hu</a>
+  </div>
+  <div class="social-media d-flex justify-content-center">
+    <a class="m-1" href="https://www.facebook.com/nsekszer"
+      ><img src="assets/facebook-logo.svg"
+    /></a>
+    <a class="m-1" href="https://www.instagram.com/nsekszer_dunakeszi/"
+      ><img src="assets/instagram-icon.svg"
+    /></a>
+  </div>
+</div>
+
+}
