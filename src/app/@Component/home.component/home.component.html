@@ -1,159 +1,99 @@
 <div class="container d-flex flex-column my-5">
-  <!--Bemutatkozás-->
-
-  <div #introduction id="introduction" class="introduction-container pt-5 mt-5">
+  <div class="introduction">
+    <h1>Precizitás és megbízhatóság minden ékszerben!</h1>
+    <p>Dunakeszi, Kazinczy utca 11.</p>
+  </div>
+  <!--Ékszer készítése-->
+  <div
+    #jewelryMaking
+    id="jewelryMaking"
+    class="jewelryMaking-container pt-5 mt-5"
+  >
     <div class="fragment-title d-flex justify-content-center">
-      <mat-icon class="mt-1 mx-2 dark-brown-text">face</mat-icon>
-      <h3 class="dark-brown-text">Üdvözlünk az NS Ékszernél!</h3>
+      <h1 class="">Teremtsd meg egyedi stílusod!</h1>
     </div>
 
     <div class="row align-items-center my-1">
       <!-- Image column -->
       <div class="col-md-6 order-1 order-md-2">
-        <img
-          class="intoduction-profile-img img-fluid"
-          src="assets/nagy_sandor_profile.jpg"
-        />
+        <img class="intoduction-profile-img img-fluid" src="" />
       </div>
       <!-- Text column -->
       <div class="col-md-6 order-2 order-md-1">
-        <p class="dark-brown-text">
-          <!-- Üdvözlünk az NS Ékszernél!<br /> -->
-          Nagy Sándor aranyműves vagyok, az NS Ékszer alapítója. Szakértelemmel
-          és szenvedéllyel készítek egyedi ékszereket, legyen szó akár egy
-          különleges alkalomról, akár a mindennapok szépségéről. A szakma
-          szeretetét édesanyámtól örököltem, aki maga is aranyműves volt, így
-          mondhatom, hogy második generációs ötvösként folytatom a családi
-          hagyományt.<br />
-          Hivatásom iránti elkötelezettségem már fiatal koromban megmutatkozott.
-          2001-ben kezdtem ötvös tanulmányaimat, majd a szakma egyik legnagyobb
-          mesterétől, Mess Istvántól leshettem el a fortélyokat Ercsiben. Az ott
-          töltött évek alatt megszerzett tapasztalat alapozta meg a
-          magabiztosságomat, melynek köszönhetően ma már bátran állíthatom, hogy
-          szinte bármilyen elképzelést meg tudok valósítani. <br />
-          Hiszem, hogy a szakértelem mellett az elméleti tudás is
-          elengedhetetlen, ezért 2006-ban ékszerbecsüs végzettséget is
-          szereztem. Tíz évnyi tapasztalatszerzés után, 2013-ban éreztem úgy,
-          hogy készen állok arra, hogy saját vállalkozásomban kamatoztassam a
-          tudásomat.<br />Az NS Ékszernél a szakmaiság és ügyfélközpontúság
-          mellett a kedvező ár garantálása is elengedhetetlen számomra. Célom,
-          hogy minden hozzám forduló hölgy és úr elégedetten távozzon egy olyan
-          ékszerrel, amely nemcsak szép, de a viselője személyiségét is tükrözi.
+        <p class="">
+          Kínálatunkban egyedi, személyre szabott ékszerek széles választéka
+          található, amelyeket az Ön elképzelései alapján készítünk el. Legyen
+          szó gyűrűről, nyakláncról vagy karkötőről, minden darab különleges
+          figyelmet kap. Az Ön stílusához és igényeihez igazodva, egyedi
+          tervezésű ékszereink nemcsak a megjelenését varázsolják egyedivé,
+          hanem érzelmi értéket is hordoznak. Válasszon minket, és viselje
+          büszkén!
         </p>
       </div>
     </div>
-
-    <div class="row align-items-center my-1">
-      <!-- Image column -->
-      <div class="col-md-6 order-1 order-md-2">
-        <img
-          class="intoduction-profile-img img-fluid"
-          src="assets/szabo_csaba_profile.jpg"
-        />
-      </div>
-      <!-- Text column -->
-      <div class="col-md-6 order-2 order-md-1">
-        <p class="dark-brown-text">
-          Szabó Csaba vagyok, jogi végzettséggel, tanácsadói múlttal és egy
-          folyamatban lévő MBA tanulmányokkal társultam Sándorhoz, az NS Ékszer
-          megálmodójához és alapítójához.<br />
-          A Kazinczy utca 11. szám alatti üzlet már gyerekkorom óta különleges
-          helyet foglal el a szívemben. Élénken él bennem az emlék, ahogy a
-          pulthoz húztam a fa széket, hogy közelebbről is megcsodálhassam a
-          kedvenc oroszlános medálomat.<br />
-          Több mint 25 év elteltével most a pult másik oldalán állok, hogy
-          háttértámogatóként segítsem az NS Ékszer munkáját és az egyre bővülő
-          ügyfélkör magas színvonalú kiszolgálását.<br />
-        </p>
-      </div>
-    </div>
-
-    <!-- <div class="d-flex align-items-center">
-      <div class="w-50 p-2">
-        <p class="dark-brown-text">
-          Üdvözlünk az NS Ékszernél!<br />
-          Nagy Sándor aranyműves vagyok, az NS Ékszer alapítója. Szakértelemmel
-          és szenvedéllyel készítek egyedi ékszereket, legyen szó akár egy
-          különleges alkalomról, akár a mindennapok szépségéről. A szakma
-          szeretetét édesanyámtól örököltem, aki maga is aranyműves volt, így
-          mondhatom, hogy második generációs ötvösként folytatom a családi
-          hagyományt.<br />
-          Hivatásom iránti elkötelezettségem már fiatal koromban megmutatkozott.
-          2001-ben kezdtem ötvös tanulmányaimat, majd a szakma egyik legnagyobb
-          mesterétől, Mess Istvántól leshettem el a fortélyokat Ercsiben. Az ott
-          töltött évek alatt megszerzett tapasztalat alapozta meg a
-          magabiztosságomat, melynek köszönhetően ma már bátran állíthatom, hogy
-          szinte bármilyen elképzelést meg tudok valósítani. <br />
-          Hiszem, hogy a szakértelem mellett az elméleti tudás is
-          elengedhetetlen, ezért 2006-ban ékszerbecsüs végzettséget is
-          szereztem. Tíz évnyi tapasztalatszerzés után, 2013-ban éreztem úgy,
-          hogy készen állok arra, hogy saját vállalkozásomban kamatoztassam a
-          tudásomat.<br />Az NS Ékszernél a szakmaiság és ügyfélközpontúság
-          mellett a kedvező ár garantálása is elengedhetetlen számomra. Célom,
-          hogy minden hozzám forduló hölgy és úr elégedetten távozzon egy olyan
-          ékszerrel, amely nemcsak szép, de a viselője személyiségét is tükrözi.
-        </p>
-      </div>
-
-      <div class="w-50 p-2">
-        <img
-          class="intoduction-profile-img img-fluid"
-          src="assets/csabi_allokep_minta.png"
-        />
-      </div>
-    </div> -->
   </div>
 
-  <hr class="hr-text dark-brown-text" data-content="NS-ÉKSZER" />
-
-  <!--Katalógus-->
+  <!--Gyűrűk-->
   <div
-    #catalog
-    id="catalog"
-    class="catalog-container fragment-container text-center my-5"
+    #rings
+    id="rings"
+    class="rings-container fragment-container text-center my-5"
   >
-    <div class="pseudo-div" style="height: 100px"></div>
     <div class="fragment-title d-flex align-items-center">
-      <mat-icon class="mb-2 mx-2 dark-brown-text">library_books</mat-icon>
-      <h3 class="dark-brown-text">KATALÓGUS</h3>
+      <h3 class="">3000+ Jegygyűrű egy helyen!</h3>
     </div>
 
-    <p class="dark-brown-text">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur.
-    </p>
-    <div class="my-3">
-      <button (click)="openCatalog()" class="btn btn-dark">
-        Katalógus megtekintése
-      </button>
-    </div>
-  </div>
-  <hr class="hr-text dark-brown-text" data-content="NS-ÉKSZER" />
-
-  <!--TÖRTARANYFELVÁSÁRLÁS-->
-  <div
-    #goldbarbuy
-    id="goldbarbuy"
-    class="goldbarbuy-container fragment-container text-center my-5"
-  >
-    <div class="pseudo-div" style="height: 100px"></div>
-    <div class="fragment-title d-flex align-items-center">
-      <mat-icon class="mb-2 mx-2 dark-brown-text">monetization_on</mat-icon>
-      <h3 class="dark-brown-text">TÖRTARANYFELVÁSÁRLÁS</h3>
-    </div>
-
-    <p class="dark-brown-text">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur.
+    <p class="">
+      Nálunk a jegygyűrűk széles választéka várja Önt! Katalógusunkban közel
+      3000 különböző jegygyűrű található, így biztosan megtalálja az ideális
+      darabot. Az egyedi ékszerek mellett segítünk azoknak is, akiknek még
+      nincsenek konkrét ötleteik, de szeretnének elköteleződni. Fedezze fel
+      kínálatunkat, és találja meg a tökéletes jegygyűrűt életének legszebb
+      pillanatára!
     </p>
   </div>
-  <hr class="hr-text dark-brown-text" data-content="NS-ÉKSZER" />
+
+  <!--Tanácsadás-->
+  <div
+    #counseling
+    id="counseling"
+    class="counseling-container fragment-container text-center my-5"
+  >
+    <div class="fragment-title d-flex align-items-center">
+      <h3 class="">Válasszátok ki együtt a tökéletes karikagyűrűt!</h3>
+    </div>
+
+    <p class="">
+      Az eljegyzést követően érdemes ellátogatnotok hozzánk, ahol együtt
+      választhatjátok ki karikagyűrűiteket. Kínálatunkban számos lehetőség vár,
+      beleértve az egyedi tervezésű gyűrűket is. Ha van egy elképzelésetek,
+      szívesen segítünk azt megvalósítani, de ha még nincsenek ötleteitek,
+      szakértőink örömmel útmutatást adnak a megfelelő választáshoz.
+      Ünnepeljétek a szeretetet a tökéletes karikagyűrűvel!
+    </p>
+  </div>
+
+  <!--Ékszerjavítás-->
+  <div
+    #jeweleryRepairing
+    id="jeweleryRepairing"
+    class="jeweleryRepairing-container fragment-container text-center my-5"
+  >
+    <div class="fragment-title d-flex align-items-center">
+      <h3 class="">Ékszerjavítás</h3>
+    </div>
+
+    <p class="">
+      Ékszerek javítására és átalakítására szakosodtunk, így ha elszakadt a
+      láncod vagy bármilyen más problémád van ékszereddel, fordulj hozzánk
+      bizalommal! Szakképzett csapatunk gyorsan és profi módon helyreállítja
+      kedvenc darabjaidat, legyen szó egyszerű javításról vagy bonyolultabb
+      átalakításról. Hozd be hozzánk ékszereidet, és élvezd újra a ragyogását!
+    </p>
+    <br />
+    <p>Keressen minket bizalommal.</p>
+    <h1>Arany és ékszerfelvásárlás</h1>
+  </div>
 
   <!--Kapcsolat-->
   <div
@@ -161,51 +101,10 @@
     id="contact"
     class="contact-container fragment-container text-center my-5"
   >
-    <div class="pseudo-div" style="height: 80px"></div>
     <div class="fragment-title d-flex align-items-center">
-      <mat-icon class="mb-2 mx-2 dark-brown-text">contact_phone</mat-icon>
-      <h3 class="dark-brown-text">KAPCSOLAT</h3>
+      <h3 class="">Elérhetőségek</h3>
     </div>
 
-    <p class="dark-brown-text">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur.
-    </p>
-    <div class="my-3">
-      <a
-        class="mx-1 social-media-icon"
-        href="https://www.facebook.com/profile.php?id=100070797541712"
-        target="_blank"
-      >
-        <img src="assets/facebook-logo.svg" />
-      </a>
-
-      <a
-        class="mx-1 social-media-icon"
-        href="https://www.instagram.com/"
-        target="_blank"
-      >
-        <img src="assets/instagram-icon.svg" />
-      </a>
-
-      <a
-        class="mx-1 social-media-icon"
-        href="https://www.tiktok.com/"
-        target="_blank"
-      >
-        <img src="assets/tiktok-logo-colored.svg" />
-      </a>
-
-      <a
-        class="mx-1 social-media-icon"
-        href="https://www.linkedin.com/"
-        target="_blank"
-      >
-        <img src="assets/linkedin-icon.svg" />
-      </a>
-    </div>
+    <p class="">kapcsolati linkek</p>
   </div>
 </div>

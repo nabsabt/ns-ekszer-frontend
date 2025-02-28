@@ -1,38 +1,85 @@
 
-.hidden-login-controller{
-  width: 50px;
-  height: 50px
+//DESKTOP VIEW->
+@media only screen and (min-width: 766px){
+   .navbar{
+    background-color: rgba(228, 221, 218,0.6);
+    box-shadow: 0px 2px 15px 1px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(3px);
+    height: 64px;
+  }
+
+
+
+  .collapse, .social-media-icons{
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+
+  .navbar-nav{
+
+    .nav-item{
+      margin: 10px;
+      p{
+      margin: 0;
+     }
+    }
+  }
+
+  li{
+    a{
+      color: black
+    }
+  }
+
+    .nav-link{
+    position: relative;
+    text-decoration: none;
+  }
 }
 
+//MOBILE VIEW->
+  @media only screen and (max-width: 765px) {
 
-.admin-button:hover{
-  border-color: #e0d4c4;
-  color: #e0d4c4
-}
+    .navbar{
+      top: 22px;
+      background-color: rgba(228, 221, 218,0.6);
+      box-shadow: 0px 2px 15px 1px rgba(0, 0, 0, 0.25);
+      backdrop-filter: blur(3px);
+    }
 
-  .nav-link{
-  position: relative;
-  text-decoration: none;
-}
+    hr {
+      border: none;
+      height: 2px;
+      background-color: #785445;
+      opacity: 0.8;
+    }
 
- .nav-link:hover {
-  color: #e0d4c4;
-}
+    .container-fluid {
+      .ns-ekszer-logo-svg {
+        width: 178px;
+        height: 74px;
+      }
+      .social-media-svg-icon {
+        width: 48px;
+        height: 48px;
+      }
+       .navbar-collapse.show {
+        border-bottom: 5px solid #785445;
+      }
+    }
 
-.nav-link::before {
-  content: "";
-  position: absolute;
-  display: block;
-  width: 80%;
-  height: 1px;
-  bottom: 15%;
-  left: 10%;
-  background-color: #e0d4c4;
-  transform: scaleX(0);
-  transition: transform 0.3s ease;
-}
+    .nav-link-name{
+      font-size: x-large;
+      margin: 0;
+      padding: 0;
+    }
 
-.nav-link:hover::before {
-  transform: scaleX(1);
-}
+    .navbar-toggler  {
+      border: none;
+    }
 
+    .navbar-toggler:focus {
+      box-shadow: 0 0 0 0;
+    }
+
+  }
