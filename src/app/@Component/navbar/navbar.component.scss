@@ -13,6 +13,7 @@
   .collapse, .social-media-icons{
     margin-top: 0 !important;
     margin-bottom: 0 !important;
+    min-width: 108px;
   }
 
   .navbar-nav{
@@ -59,6 +60,10 @@
         width: 178px;
         height: 74px;
       }
+      .social-media-icons{
+        margin: 1rem !important;
+        margin-top: 5rem !important
+      }
       .social-media-svg-icon {
         width: 48px;
         height: 48px;
@@ -68,6 +73,10 @@
       }
     }
 
+    .nav-link{
+      margin: 0;
+      padding: 0;
+    }
     .nav-link-name{
       font-size: x-large;
       margin: 0;
