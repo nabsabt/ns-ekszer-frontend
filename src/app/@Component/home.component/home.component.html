@@ -1,35 +1,43 @@
-<div class="container d-flex flex-column my-5">
+<div class="mt-0 d-flex flex-column my-5">
+  <!--Introduction (non-fragment)-->
   <div class="introduction">
-    <h1>Precizitás és megbízhatóság minden ékszerben!</h1>
-    <p>Dunakeszi, Kazinczy utca 11.</p>
+    <div class="intro-title-box text-wrap">
+      <p>Precizitás és megbízhatóság minden ékszerben!</p>
+    </div>
+    <div class="intro-text-box d-flex align-items-center flex-wrap">
+      <div class="line"></div>
+      <p class="m-0">Dunakeszi, Kazinczy utca 11.</p>
+    </div>
   </div>
   <!--Ékszer készítése-->
-  <div
-    #jewelryMaking
-    id="jewelryMaking"
-    class="jewelryMaking-container pt-5 mt-5"
-  >
-    <div class="fragment-title d-flex justify-content-center">
-      <h1 class="">Teremtsd meg egyedi stílusod!</h1>
+  <div #jewelryMaking id="jewelryMaking" class="jewelryMaking-container">
+    <!--Details section-->
+    <div class="details-section">
+      <div class="img-container">
+        <img src="/assets/images/jewelryMaking_img.png" />
+      </div>
+      <div class="text-container">
+        <div class="title-container">
+          <div class="line"></div>
+          <span class="title">Teremtsd meg egyedi stílusod!</span>
+        </div>
+        <div class="description-container">
+          <span class="description">
+            Kínálatunkban egyedi, személyre szabott ékszerek széles választéka
+            található, amelyeket az Ön elképzelései alapján készítünk el. Legyen
+            szó gyűrűről, nyakláncról vagy karkötőről, minden darab különleges
+            figyelmet kap. Az Ön stílusához és igényeihez igazodva, egyedi
+            tervezésű ékszereink nemcsak a megjelenését varázsolják egyedivé,
+            hanem érzelmi értéket is hordoznak. Válasszon minket, és viselje
+            büszkén!
+          </span>
+        </div>
+      </div>
     </div>
 
-    <div class="row align-items-center my-1">
-      <!-- Image column -->
-      <div class="col-md-6 order-1 order-md-2">
-        <img class="intoduction-profile-img img-fluid" src="" />
-      </div>
+    <!--Image section-->
+    <div class="image-section">
       <!-- Text column -->
-      <div class="col-md-6 order-2 order-md-1">
-        <p class="">
-          Kínálatunkban egyedi, személyre szabott ékszerek széles választéka
-          található, amelyeket az Ön elképzelései alapján készítünk el. Legyen
-          szó gyűrűről, nyakláncról vagy karkötőről, minden darab különleges
-          figyelmet kap. Az Ön stílusához és igényeihez igazodva, egyedi
-          tervezésű ékszereink nemcsak a megjelenését varázsolják egyedivé,
-          hanem érzelmi értéket is hordoznak. Válasszon minket, és viselje
-          büszkén!
-        </p>
-      </div>
     </div>
   </div>
 
@@ -93,6 +101,21 @@
     <br />
     <p>Keressen minket bizalommal.</p>
     <h1>Arany és ékszerfelvásárlás</h1>
+  </div>
+
+  <!--Arany és ékszerfelvásárlás-->
+  <div
+    #goldAndJewelAcquisition
+    id="goldAndJewelAcquisition"
+    class="goldAndJewelAcquisition-container fragment-container text-center my-5"
+  >
+    <div class="fragment-title d-flex align-items-center">
+      <p>Keressen minket bizalommal.</p>
+      <h3 class="">Arany és ékszerfelvásárlás</h3>
+    </div>
+
+    <br />
+    <p>Keressen minket bizalommal.</p>
   </div>
 
   <!--Kapcsolat-->

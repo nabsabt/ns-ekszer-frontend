@@ -1,66 +1,164 @@
-@media (max-width: 768px) {
+.introduction {
+  background-size: cover;
+  background: linear-gradient(270deg, rgba(217, 217, 217, 0.00) 0%, rgba(0,0,0,0.5) 100%),
+  url('/assets/images/introduction_backgroundimg.png') no-repeat center center;
+  background-size: cover;
 
-
-   /* .intoduction-profile-img{
-    width: 150px;
-   } */
+  .intro-title-box{
+    color: #D9D9D9;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+  .intro-text-box{
+    margin-top: 25px;
+    color: #D9D9D9;
+    font-family: Joly;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    .line{
+      width: 85px;
+      margin-right: 20px;
+      border: 1px solid #D9D9D9;
+    }
+  }
+  color: white;
 }
 
-p{
-  text-align: justify;
-}
-.social-media-icon{
-  transition: 400ms;
-  opacity: 0.8;
-}
-
-.social-media-icon:hover{
-  transition: 400ms;
-
-  opacity: 1;
-}
-
-
-.date-picker{
-  width: 25%;
-  min-width: 200px;
-}
-
-
-.hr-text {
-  line-height: 1em;
-  position: relative;
-  outline: 0;
-  border: 0;
-  color: #e0d4c4;
-  text-align: center;
-  height: 1.5em;
-  opacity: .5;
-  &:before {
-    content: '';
-    background: linear-gradient(to right, transparent, #805444, transparent);
-    position: absolute;
-    left: 0;
-    top: 50%;
+.jewelryMaking-container{
+  .details-section{
     width: 100%;
-    height: 1px;
-  }
-  &:after {
-    content: attr(data-content);
-    position: relative;
-    display: inline-block;
-    color: #805444;
-
-    padding: 0 .5em;
-    line-height: 1.5em;
-    // this is really the only tricky part, you need to specify the background color of the container element...
-    color: #805444;
-    background-color: #e0d4c4;
+    background: linear-gradient(to bottom, rgba(120, 84, 69, 0.2) 50%, transparent 50%);
   }
 }
 
-.appointment-table-container{
-  max-height: 400px;
-  overflow-y: auto;
+//DESKTOP VIEW->
+@media only screen and (min-width: 766px){
+  img:hover{
+    transition: 400ms;
+    transform: translateX(10px) translateY(-10px);
+    box-shadow: -10px 10px 10px rgba(0,0,0,0.5) ;
+  }
+
+  img{
+    transition: 400ms;
+  }
+
+  .introduction{
+    width: 100%;
+    height: 616px;
+    padding-left: 6rem;
+    .intro-title-box{
+      margin-top: 200px;
+      width: 640px;
+      height: 207px;
+      font-size: 64px;
+    }
+  }
+
+   .jewelryMaking-container{
+    .details-section{
+      display: flex;
+      justify-content:center;
+      align-items: center;
+      .img-container{
+        margin: 2rem;
+      }
+      .text-container{
+        margin: 2rem;
+        .title-container{
+          height: 192px;
+          width: 395px;
+          .title{
+            color: #785445;
+            font-weight: 700;
+            font-size: 56px;
+            line-height: 64px;
+          }
+          .line{
+            width: 200px;
+            margin-right: 20px;
+            margin-bottom: 20px;
+            border: 1px solid #785445;
+          }
+        }
+        .description-container{
+          margin-top: 1rem;
+          height: 201px;
+          width: 395px;
+          .description{
+            font-size: 16px;
+            line-height: 24px;
+            font-weight: 400;
+          }
+        }
+      }
+    }
+  }
+
 }
 
+//MOBILE VIEW->
+@media only screen and (max-width: 765px) {
+  .introduction{
+    width: 100%;
+    height: 474px;
+    padding-left: 2rem;
+    .intro-title-box{
+      margin-top: 130px;
+      width: 640px;
+    height: 208px;
+    max-width: 90%;
+    font-size: 48px;
+    }
+    .line{
+      margin: 10px 0 15px 0
+    }
+  }
+
+   .jewelryMaking-container{
+    .details-section{
+      height: 1102px;
+      background: linear-gradient(to bottom, rgba(120, 84, 69, 0.2) 50%, transparent 50%);
+      .img-container{
+        margin: 2rem;
+        img{
+          height: 415px;
+          width: 342px;
+        }
+      }
+      .text-container{
+        margin: 2rem;
+        .title-container{
+          height: 168px;
+          width: 395px;
+          .title{
+            color: #785445;
+            font-weight: 700;
+            font-size: 48px;
+            line-height: 56px;
+          }
+          .line{
+            width: 200px;
+            margin-right: 20px;
+            margin-bottom: 20px;
+            border: 1px solid #785445;
+          }
+        }
+        .description-container{
+          margin-top: 1rem;
+          height: 240px;
+          width: 340px;
+          .description{
+            font-size: 16px;
+            line-height: 24px;
+            font-weight: 400;
+          }
+        }
+      }
+    }
+  }
+}

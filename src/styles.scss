@@ -5,38 +5,9 @@
 @import "bootstrap/scss/bootstrap";
 
 
-$custom-colors: (
-    "dark-brown": #805444,
-    "light-brown": #e0d4c4
-);
-
-.dark-brown-bg {
-  background-color: #805444;
+body{
+  font-family: Joly;
 }
-
-.dark-brown-border {
-  border-style: solid;
-  border-width: 1px;
-  border-color: #805444;
-}
-
-.dark-brown-text {
-  color: #805444;
-}
-
-.light-brown-bg {
-  background-color: #e0d4c4;
-}
-
-.light-brown-border {
-  border-style: solid;
-  border-width: 1px;
-  border-color: #e0d4c4;
-}
-.light-brown-text {
-  color: #e0d4c4 !important;
-}
-
 
 .mat-mdc-snack-bar-container {
   width: 80%;
