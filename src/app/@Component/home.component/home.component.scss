@@ -1,9 +1,7 @@
 .introduction {
-  background-size: cover;
   background: linear-gradient(270deg, rgba(217, 217, 217, 0.00) 0%, rgba(0,0,0,0.5) 100%),
   url('/assets/images/introduction_backgroundimg.png') no-repeat center center;
   background-size: cover;
-
   .intro-title-box{
     color: #D9D9D9;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -33,9 +31,66 @@
     width: 100%;
     background: linear-gradient(to bottom, rgba(120, 84, 69, 0.2) 50%, transparent 50%);
   }
+}
+
+.rings-container{
+  .details-section{
+    width: 100%;
+    background-color: rgba(120, 84, 69, 0.2);
+    margin-top: 3rem;
+    padding: 3rem;
+  }
+}
+
+.counseling-container{
+  width: 100%;
+  margin-top: 3rem;
+}
+
+.jeweleryRepairing-container{
+  background-color: rgba(120, 84, 69, 0.2);
+  .details-section{
+    width: 100%;
+    margin-top: 3rem;
+  }
+}
+
+
+.goldAndJewelAcquisition-container {
+  height: 570px; /* Ensure it matches the design */
+  color: white;
+  background: url('/assets/images/goldAndJewelAcquisition_img.png') no-repeat center center;
+  background-size: cover;
+  .text-container {
+    text-align: center;
+    .text{
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 42px;
+    }
+
+  }
+  .title-container {
+
+    text-align: center;
+    .title{
+      font-weight: 700;
+      font-size: 72px;
+      line-height: 78px;
+    }
+    .line{
+      margin-left: auto;
+      margin-right: auto;
+      width: 200px;
+      margin-top: 1rem;
+    margin-bottom: 1rem;
+      border: 1px solid #D9D9D9;
+    }
+  }
 
 
 }
+
 
 //DESKTOP VIEW->
 @media only screen and (min-width: 766px){
@@ -104,6 +159,153 @@
     }
   }
 
+  .rings-container{
+    .details-section{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .img-container{
+        .description-mobile-view-container{
+          display: none;
+        }
+        img{
+          width: 100%;
+          height: auto;
+        }
+      }
+      .text-container{
+        max-width: 1035px;
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        margin: 2rem;
+        .title-container{
+          width: 30%;
+          .title{
+            color: #785445;
+            font-weight: 700;
+            font-size: 56px;
+            line-height: 64px;
+          }
+          .line{
+            width: 200px;
+            margin-right: 20px;
+            margin-bottom: 20px;
+            border: 1px solid #785445;
+          }
+        }
+        .description-container{
+          width: 70%;
+          .description{
+            font-size: 16px;
+            line-height: 24px;
+            font-weight: 400;
+          }
+        }
+      }
+    }
+  }
+
+  .counseling-container{
+    .details-section{
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 2rem;
+      max-width: 1035px;
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      align-items: center;
+      .img-container{
+        .description-mobile-view-container{
+          display: none;
+        }
+        img{
+          width: 100%;
+          height: auto;
+        }
+      }
+      .text-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 480px;
+        .title-container{
+          width: 502px;
+          .title{
+            color: #785445;
+            font-weight: 700;
+            font-size: 56px;
+            line-height: 64px;
+          }
+          .line{
+            width: 200px;
+            margin-right: 20px;
+            margin-bottom: 20px;
+            border: 1px solid #785445;
+          }
+        }
+        .description-container{
+          width: 502px;
+          .description{
+            font-size: 16px;
+            line-height: 24px;
+            font-weight: 400;
+          }
+        }
+      }
+    }
+  }
+
+  .jeweleryRepairing-container{
+    .details-section{
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 2rem;
+      max-width: 1035px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .img-container{
+        .description-mobile-view-container{
+          display: none;
+        }
+        img{
+          width: 100%;
+          height: auto;
+        }
+      }
+      .text-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        height: 480px;
+        .title-container{
+          width: 502px;
+          .title{
+            color: #785445;
+            font-weight: 700;
+            font-size: 56px;
+            line-height: 64px;
+          }
+          .line{
+            width: 200px;
+            margin-right: 20px;
+            margin-bottom: 20px;
+            border: 1px solid #785445;
+          }
+        }
+        .description-container{
+          width: 502px;
+          .description{
+            font-size: 16px;
+            line-height: 24px;
+            font-weight: 400;
+          }
+        }
+      }
+    }
+  }
 }
 
 //MOBILE VIEW->
@@ -146,7 +348,7 @@
         }
         padding: 2rem;
         img{
-          max-width: 342px;
+          max-width: 3339px;
           width: 100%;
           max-height: 415px;
           height: auto;
@@ -181,6 +383,174 @@
           height: 491px
         }
 
+      }
+    }
+  }
+
+
+  .rings-container{
+    .details-section{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-left: 2rem;
+      padding-right: 2rem;
+      .img-container{
+        .description-mobile-view-container{
+          margin-bottom: 2rem;
+          .description{
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 24px;
+          }
+        }
+        img{
+          margin-top: 2rem;
+          margin-bottom: 2rem;
+          max-width: 337px;
+          width: 100%;
+          max-height: 145px;
+          height: auto;
+        }
+      }
+      .text-container{
+        .title-container{
+          width: 30%;
+          .title{
+            color: #785445;
+            font-weight: 700;
+            font-size: 56px;
+            line-height: 64px;
+          }
+          .line{
+            width: 200px;
+            margin-right: 20px;
+            margin-bottom: 20px;
+            border: 1px solid #785445;
+          }
+        }
+        .description-container{
+         display: none;
+        }
+      }
+    }
+  }
+
+  .counseling-container{
+
+    .details-section{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      padding-left: 2rem;
+      padding-right: 2rem;
+      .img-container{
+        .description-mobile-view-container{
+          margin-bottom: 2rem;
+          .description{
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 24px;
+          }
+        }
+        img{
+          margin-top: 2rem;
+          margin-bottom: 2rem;
+          max-width: 339px;
+          width: 100%;
+          max-height: 403px;
+          height: auto;
+        }
+      }
+      .text-container{
+        .title-container{
+          width: 30%;
+          .title{
+            color: #785445;
+            font-weight: 700;
+            font-size: 48px;
+            line-height: 56px;
+          }
+          .line{
+            width: 200px;
+            margin-right: 20px;
+            margin-bottom: 20px;
+            border: 1px solid #785445;
+          }
+        }
+        .description-container{
+         display: none;
+        }
+      }
+    }
+  }
+
+  .jeweleryRepairing-container{
+    .details-section{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-left: 2rem;
+      padding-right: 2rem;
+      .img-container{
+        .description-mobile-view-container{
+          margin-bottom: 2rem;
+          .description{
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 24px;
+          }
+        }
+        img{
+          margin-top: 2rem;
+          margin-bottom: 2rem;
+          max-width: 344px;
+          width: 100%;
+          max-height: 408px;
+          height: auto;
+        }
+      }
+      .text-container{
+        .title-container{
+          width: 30%;
+          .title{
+            color: #785445;
+            font-weight: 700;
+            font-size: 56px;
+            line-height: 64px;
+          }
+          .line{
+            width: 200px;
+            margin-right: 20px;
+            margin-bottom: 20px;
+            border: 1px solid #785445;
+          }
+        }
+        .description-container{
+         display: none;
+        }
+      }
+    }
+  }
+
+  .goldAndJewelAcquisition-container{
+
+    .text-container{
+      margin-top: auto !important;
+
+      .text{
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 28px;
+      }
+    }
+    .title-container{
+      margin-bottom: auto !important;
+      .title{
+        font-weight: 700;
+        font-size: 40px;
+        line-height: 43px;
       }
     }
   }
