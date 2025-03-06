@@ -45,6 +45,9 @@
 .counseling-container{
   width: 100%;
   margin-top: 3rem;
+  padding-top: 4rem;
+  margin-bottom: 3rem;
+
 }
 
 .jeweleryRepairing-container{
@@ -91,6 +94,14 @@
 
 }
 
+.contact-container{
+  background: linear-gradient(to top, rgba(120, 84, 69, 0.2) 50%, transparent 50%);
+
+  .details-section{
+    width: 100%;
+    margin-top: 3rem;
+  }
+}
 
 //DESKTOP VIEW->
 @media only screen and (min-width: 766px){
@@ -286,6 +297,56 @@
             color: #785445;
             font-weight: 700;
             font-size: 56px;
+            line-height: 64px;
+          }
+          .line{
+            width: 200px;
+            margin-right: 20px;
+            margin-bottom: 20px;
+            border: 1px solid #785445;
+          }
+        }
+        .description-container{
+          width: 502px;
+          .description{
+            font-size: 16px;
+            line-height: 24px;
+            font-weight: 400;
+          }
+        }
+      }
+    }
+  }
+
+  .contact-container{
+    .details-section{
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 2rem;
+      max-width: 1035px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .img-container{
+        .description-mobile-view-container{
+          display: none;
+        }
+        img{
+          width: 100%;
+          height: auto;
+        }
+      }
+      .text-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        height: 460px;
+        .title-container{
+          width: 502px;
+          .title{
+            color: #785445;
+            font-weight: 700;
+            font-size: 48px;
             line-height: 64px;
           }
           .line{
@@ -551,6 +612,54 @@
         font-weight: 700;
         font-size: 40px;
         line-height: 43px;
+      }
+    }
+  }
+
+  .contact-container{
+    .details-section{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-left: 2rem;
+      padding-right: 2rem;
+      .img-container{
+        .description-mobile-view-container{
+          margin-bottom: 2rem;
+          .description{
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 42px;
+          }
+        }
+        img{
+          margin-top: 2rem;
+          margin-bottom: 2rem;
+          max-width: 344px;
+          width: 100%;
+          max-height: 408px;
+          height: auto;
+        }
+      }
+      .text-container{
+        .title-container{
+          width: 30%;
+          .title{
+            color: #785445;
+            font-weight: 700;
+            font-size: 56px;
+            line-height: 64px;
+          }
+          .line{
+            width: 200px;
+            margin-right: 20px;
+            margin-bottom: 20px;
+            border: 1px solid #785445;
+          }
+        }
+        .description-container{
+         display: none;
+        }
       }
     }
   }
