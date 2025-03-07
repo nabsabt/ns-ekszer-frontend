@@ -2,5 +2,5 @@ export const environment = {
   production: true,
   apiURL: 'https://nsekszer.hu/api',
   catalogPath: '',
-  isUnderDevelopment: false,
+  isUnderDevelopment: true,
 };
