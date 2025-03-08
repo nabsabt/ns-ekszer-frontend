@@ -1,0 +1,27 @@
+.footer-component{
+  height: 64px !important;
+  background-color: #785445;
+  color:#F5F5F5;
+
+}
+
+//DESKTOP VIEW
+@media only screen and (min-width: 766px){
+  .footer-component{
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 42px;
+  }
+
+}
+
+//MOBILE VIEW
+@media only screen and (max-width: 765px){
+  .footer-component{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 42px;
+
+  }
+
+}

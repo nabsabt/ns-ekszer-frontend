@@ -26,6 +26,7 @@
   color: white;
 }
 
+
 .jewelryMaking-container{
   .details-section{
     width: 100%;
@@ -45,12 +46,13 @@
 .counseling-container{
   width: 100%;
   margin-top: 3rem;
-  padding-top: 4rem;
+  //padding-top: 4rem;
   margin-bottom: 3rem;
-
+  padding: 3rem;
 }
 
 .jeweleryRepairing-container{
+  padding: 3rem;
   background-color: rgba(120, 84, 69, 0.2);
   .details-section{
     width: 100%;
@@ -96,18 +98,19 @@
 
 .contact-container{
   background: linear-gradient(to top, rgba(120, 84, 69, 0.2) 50%, transparent 50%);
-
+  padding: 3rem;
   .details-section{
     width: 100%;
     margin-top: 3rem;
   }
 }
 
+//előtte 776tól
 //DESKTOP VIEW->
-@media only screen and (min-width: 766px){
+@media only screen and (min-width: 991px){
   img:hover{
     transition: 400ms;
-    transform: translateX(10px) translateY(-10px);
+    transform: translateX(7px) translateY(-7px);
     box-shadow: -10px 10px 10px rgba(0,0,0,0.5) ;
   }
 
@@ -118,7 +121,7 @@
   .introduction{
     width: 100%;
     height: 616px;
-    padding-left: 6rem;
+    padding-left: 10rem;
     .intro-title-box{
       margin-top: 200px;
       width: 640px;
@@ -131,10 +134,15 @@
     .details-section{
       display: flex;
       justify-content:center;
+      //justify-content:space-evenly;
       align-items: center;
       .img-container{
         .title-mobile-view-container{
           display: none;
+        }
+        img{
+          width: 100%;
+          height: auto;
         }
         margin: 2rem;
       }
@@ -143,6 +151,7 @@
         .title-container{
           height: 192px;
           width: 395px;
+          margin-bottom: 4rem;
           .title{
             color: #785445;
             font-weight: 700;
@@ -157,7 +166,7 @@
           }
         }
         .description-container{
-          margin-top: 1rem;
+          margin-top: 4rem;
           height: 201px;
           width: 395px;
           .description{
@@ -189,7 +198,7 @@
         display: flex;
         align-items: end;
         justify-content: space-between;
-        margin: 2rem;
+        margin-bottom: 2rem;
         .title-container{
           width: 30%;
           .title{
@@ -206,7 +215,7 @@
           }
         }
         .description-container{
-          width: 70%;
+          width: 60%;
           .description{
             font-size: 16px;
             line-height: 24px;
@@ -241,6 +250,7 @@
         flex-direction: column;
         justify-content: space-between;
         height: 480px;
+        padding: 2rem;
         .title-container{
           width: 502px;
           .title{
@@ -370,17 +380,19 @@
 }
 
 //MOBILE VIEW->
-@media only screen and (max-width: 765px) {
+@media only screen and (max-width: 990px) {
   .introduction{
     width: 100%;
     height: 474px;
     padding-left: 2rem;
+    padding-right: 2rem;
     .intro-title-box{
       margin-top: 130px;
       width: 640px;
     height: 208px;
     max-width: 90%;
-    font-size: 48px;
+    //font-size: 48px;
+    font-size: 42px;
     }
     .line{
       margin: 10px 0 15px 0
@@ -409,7 +421,7 @@
         }
         padding: 2rem;
         img{
-          max-width: 3339px;
+          max-width: 339px;
           width: 100%;
           max-height: 415px;
           height: auto;
@@ -422,7 +434,8 @@
         }
         .description-container{
           height: 240px;
-          width: 340px;
+          //width: 340px;
+          width: 100%;
           .description{
             font-size: 16px;
             line-height: 24px;
@@ -620,7 +633,6 @@
     .details-section{
       display: flex;
       flex-direction: column;
-      align-items: center;
       padding-left: 2rem;
       padding-right: 2rem;
       .img-container{
@@ -647,13 +659,13 @@
           .title{
             color: #785445;
             font-weight: 700;
-            font-size: 56px;
+            font-size: 42px;
             line-height: 64px;
           }
           .line{
             width: 200px;
             margin-right: 20px;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
             border: 1px solid #785445;
           }
         }

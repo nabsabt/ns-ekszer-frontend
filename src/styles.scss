@@ -6,8 +6,36 @@
 @import url('https://fonts.googleapis.com/css2?family=Jolly+Lodger&display=swap');
 
 
+@font-face {
+  font-family: 'Joly Display';
+  src: url('/assets/fonts/JolyDisplay-Regular.woff2') format('woff2'),
+       url('/assets/fonts/JolyDisplay-Regular.woff') format('woff'),
+       url('/assets/fonts/JolyDisplay-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Joly Display';
+  src: url('/assets/fonts/JolyDisplay-Bold.woff2') format('woff2'),
+       url('/assets/fonts/JolyDisplay-Bold.woff') format('woff'),
+       url('/assets/fonts/JolyDisplay-Bold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Joly Display';
+  src: url('/assets/fonts/JolyDisplay-Italic.woff2') format('woff2'),
+       url('/assets/fonts/JolyDisplay-Italic.woff') format('woff'),
+       url('/assets/fonts/JolyDisplay-Italic.otf') format('opentype');
+  font-weight: normal;
+  font-style: italic;
+}
+
 body{
-  font-family: 'Joly';
+  //font-family: 'Joly';
+  font-family: 'Joly Display'
 }
 
 .mat-mdc-snack-bar-container {

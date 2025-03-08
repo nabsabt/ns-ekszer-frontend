@@ -30,6 +30,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { FooterComponent } from './@Component/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     NavbarComponent,
   ],
   imports: [
+    FooterComponent,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,

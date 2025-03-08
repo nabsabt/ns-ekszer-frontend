@@ -1,6 +1,6 @@
 
 //DESKTOP VIEW->
-@media only screen and (min-width: 766px){
+@media only screen and (min-width: 992px){
    .navbar{
     background-color: rgba(228, 221, 218,0.6);
     box-shadow: 0px 2px 15px 1px rgba(0, 0, 0, 0.25);
@@ -46,14 +46,15 @@
 
 
 //MOBILE VIEW->
-  @media only screen and (max-width: 765px) {
+  @media only screen and (max-width: 991px) {
 
     .navbar{
+
       top: 22px;
       max-width: 100vw;
-      background-color: rgba(228, 221, 218,0.6);
+      background-color: rgba(228, 221, 218,0.7);
       box-shadow: 0px 2px 15px 1px rgba(0, 0, 0, 0.25);
-      backdrop-filter: blur(3px);
+      backdrop-filter: blur(5px);
     }
 
     hr {
