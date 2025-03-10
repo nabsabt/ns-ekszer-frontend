@@ -48,11 +48,11 @@
   margin-top: 3rem;
   //padding-top: 4rem;
   margin-bottom: 3rem;
-  padding: 3rem;
+  //padding: 3rem;
 }
 
 .jeweleryRepairing-container{
-  padding: 3rem;
+  //padding: 3rem;
   background-color: rgba(120, 84, 69, 0.2);
   .details-section{
     width: 100%;
@@ -93,6 +93,16 @@
     }
   }
 
+  .text-description-container{
+    margin-top: 0;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    .text{
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 28px;
+    }
+  }
 
 }
 
@@ -126,7 +136,7 @@
       margin-top: 200px;
       width: 640px;
       height: 207px;
-      font-size: 64px;
+      font-size: 48px;
     }
   }
 
@@ -387,12 +397,10 @@
     padding-left: 2rem;
     padding-right: 2rem;
     .intro-title-box{
-      margin-top: 130px;
+      margin-top: 9rem;
       width: 640px;
-    height: 208px;
     max-width: 90%;
-    //font-size: 48px;
-    font-size: 42px;
+    font-size: 30px;
     }
     .line{
       margin: 10px 0 15px 0
@@ -433,7 +441,7 @@
           display: none;
         }
         .description-container{
-          height: 240px;
+          //height: 240px;
           //width: 340px;
           width: 100%;
           .description{
@@ -489,7 +497,7 @@
       }
       .text-container{
         .title-container{
-          width: 30%;
+          //width: 40%;
           .title{
             color: #785445;
             font-weight: 700;
@@ -625,6 +633,17 @@
         font-weight: 700;
         font-size: 40px;
         line-height: 43px;
+      }
+    }
+
+    .text-description-container{
+      margin-top: 0;
+      margin-left: 1rem;
+      margin-right: 1rem;
+      .text{
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 28px;
       }
     }
   }
